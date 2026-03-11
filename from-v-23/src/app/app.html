@@ -1,0 +1,22 @@
+<h1>For Loop Contextual Variables</h1>
+
+@for(user of users; track user;
+ let i = $index;
+  let f = $first;
+  let l = $last
+  ){
+
+  <!-- @if(f || l){
+    <h2 style="background-color: red;">This is our {{i+1}} user and name is {{user}}</h2>
+  } @else {
+    <h2>This is our {{i+1}} user and name is {{user}}</h2>
+  } -->
+
+  @if($odd){
+    <h2 style="background-color: #aaa;">This is our {{i}} user and name is {{user}}</h2>
+  } @else{
+    <h2 style="background-color: #777;">This is our {{i}} user and name is {{user}}</h2>
+  }
+} @empty(){
+  <h2>No users found.</h2>
+}
