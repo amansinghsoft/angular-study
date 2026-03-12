@@ -1,0 +1,9 @@
+<!-- <h1 style="background-color: red;">Dynamic Style</h1> -->
+<h1 [style.background-color]="bgColor"
+  [style.fontSize.px]="fontSize"
+  >Dynamic Style</h1>
+
+  <hr>
+
+  <h1 [style.fontSize]="zoom ? headingSizeBig : headingSizeSmall">Heading</h1>
+  <button (click)="updateHeadingSize()">Toggle Font</button>

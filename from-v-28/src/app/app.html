@@ -1,0 +1,13 @@
+<h1>*ngFor Directive in Angular</h1>
+
+<ul>
+  <li *ngFor="let x of students">{{x}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let student of studentsData">
+    <p>Name: {{student.name}}</p>
+    <p>Age: {{student.age}}</p>
+    <p>Email: {{student.email}}</p>
+  </li>
+</ul>
