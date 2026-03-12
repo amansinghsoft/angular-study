@@ -1,1 +1,25 @@
 <h1>*ngIf Directive in Angular</h1>
+
+<!-- <h2 *ngIf="show">Welcome to the App</h2>
+
+<div  *ngIf="login; else logout">
+  <a href="/">Logout</a>
+</div>
+<ng-template #logout>
+  <a href="">Login</a>
+</ng-template> -->
+
+<div *ngIf="block == 0">
+  <h2>Block 0</h2>
+</div>
+<div *ngIf="block == 1">
+  <h2>Block 1</h2>
+</div>
+<div *ngIf="block == 2">
+  <h2>Block 2</h2>
+</div>
+<div *ngIf="block == 3">
+  <h2>Block 3</h2>
+</div>
+
+<button (click)="updateBlock()">Update Block</button>

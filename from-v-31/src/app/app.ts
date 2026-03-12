@@ -1,19 +1,12 @@
-import { NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [NgIf],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  show = true;
-
-  login=false;
-
-  block=0;
-  updateBlock(){
-    this.block++;
-  }
+  
 }
