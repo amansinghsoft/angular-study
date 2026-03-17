@@ -1,0 +1,24 @@
+<h1>Template Driven Forms Validation</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input #name="ngModel" type="text" required placeholder="enter name" name="name" ngModel>
+  <span class="error" *ngIf="name.invalid && name.touched">Name is Required.</span>
+  <br><br>
+  <input type="password" minlength="6" required #password="ngModel" placeholder="enter password" name="password" ngModel>
+  <span class="error" *ngIf="password.invalid && password.touched">Please enter valid Password.</span>
+  <br><br>
+  <input type="email"  required #email="ngModel" email placeholder="enter email" name="email" ngModel>
+  <span class="error" *ngIf="email.invalid && email.touched">Please enter valid Email.</span>
+  <br><br>
+  <input type="text"  required #address="ngModel" pattern="[a-zA-Z0-9\s]+" placeholder="enter address" name="address" ngModel>
+  <span class="error" *ngIf="address.invalid && address.touched">Please enter valid Address.</span>
+  <br><br>
+  <select #gender="ngModel" required name="gender" ngModel>
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <span class="error" *ngIf="gender.invalid && gender.touched">Please select Gender.</span>
+  <br><br>
+  <button [disabled]="userForm.invalid">Add User</button>
+</form>
