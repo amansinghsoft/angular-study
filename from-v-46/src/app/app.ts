@@ -1,14 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CurrencyConverterPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  title = 'Angulat Test of Pipes';
-  date = new Date();
   amount = 10;
 }
