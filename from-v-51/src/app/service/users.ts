@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class Products {
+export class Users {
   constructor(private http:HttpClient){}
 
-  getProductList(){
-    const url="https://dummyjson.com/products";
+  getUsers(){
+    const url = "http://localhost:3000/users";
     return this.http.get(url)
   }
 }

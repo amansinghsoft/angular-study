@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { Products } from './services/products';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -14,7 +15,7 @@ export class App {
   ngOnInit(){
     this.productService.getProductList().subscribe((data:any)=>{
       console.log(data);
-      this.productList = data.products;
+      this.productList = data.products
     })
   }
 }
