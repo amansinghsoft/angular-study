@@ -1,0 +1,25 @@
+<h1>Integrate Json Server API</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+  <input type="text" placeholder="enter name" name="name" [ngModel]="selecedUser?.name">
+  <br><br>
+  <input type="text" placeholder="enter age" name="age" [ngModel]="selecedUser?.age">
+  <br><br>
+  <input type="text" placeholder="enter email" name="email" [ngModel]="selecedUser?.email">
+  <br><br>
+  @if(!selecedUser){
+    <button>Add User</button>
+  }@else {
+    <button>Update User</button>
+  }
+</form>
+
+@for(user of users; track user.id){
+  <ul>
+    <li><b>Name :</b>{{user.name}}</li>
+    <li><b>Age :</b>{{user.age}}</li>
+    <li><b>Email :</b>{{user.email}}</li>
+    <li><button (click)="deleteUser(user.id)">Delete</button></li>
+    <li><button (click)="selectUser(user.id)">Update User</button></li>
+  </ul>
+}
